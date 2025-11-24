@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+  investcalc:
+    build: .
+    container_name: investcalc-api
+    ports:
+      - "8000:8000"

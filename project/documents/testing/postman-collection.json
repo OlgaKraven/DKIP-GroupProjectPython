@@ -1,0 +1,36 @@
+{
+  "info": {
+    "name": "InvestCalc API Collection",
+    "_postman_id": "12345-abcde",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Local Calculation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8000/calc/local",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "calc",
+            "local"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"project_name\": \"CRM\",\n  \"capex\": 500000,\n  \"opex\": 120000,\n  \"training_costs\": 80000,\n  \"period_years\": 3,\n  \"expected_savings_per_year\": 300000,\n  \"expected_revenue_growth_per_year\": 200000\n}"
+        }
+      }
+    }
+  ]
+}

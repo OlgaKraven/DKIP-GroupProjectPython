@@ -1,0 +1,51 @@
+openapi: 3.0.0
+info:
+  title: InvestCalc API
+  version: 1.0.0
+paths:
+  /calc/local:
+    post:
+      summary: Локальный расчёт
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InputModel'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultModel'
+components:
+  schemas:
+    InputModel:
+      type: object
+      properties:
+        project_name:
+          type: string
+        capex:
+          type: number
+        opex:
+          type: number
+        training_costs:
+          type: number
+        period_years:
+          type: integer
+        expected_savings_per_year:
+          type: number
+        expected_revenue_growth_per_year:
+          type: number
+    ResultModel:
+      type: object
+      properties:
+        tco:
+          type: number
+        roi:
+          type: number
+        payback_period_years:
+          type: number
+        scenario:
+          type: string
